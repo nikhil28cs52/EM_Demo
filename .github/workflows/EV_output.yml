@@ -25,6 +25,12 @@ jobs:
       - name: execute the file
         run: ./a.out
         
+      - name: 'Upload artifact #1'
+        uses: ./
+        with:
+          name: 'Artifact-A'
+          path: a.out
+        
 #   execute:
 #     runs-on: self-hosted
 
