@@ -25,11 +25,11 @@ jobs:
       - name: execute the file
         run: ./a.out
         
-      - name: 'Upload artifact #1'
-        uses: ./
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          name: 'Artifact-A'
-          path: home/runner/work/EM_Demo/EM_Demo/a.out
+          name: Upload output in Github Artifacts
+          path: a.out
         
 #   execute:
 #     runs-on: self-hosted
