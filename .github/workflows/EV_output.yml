@@ -28,19 +28,17 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: Upload output in Github Artifacts
+          name: Artifact_file
           path: a.out
         
-#   execute:
-#     runs-on: self-hosted
+  release:
+    runs-on: self-hosted
+    needs: build
 
-#     # Steps represent a sequence of tasks that will be executed as part of the job
-#     steps:
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v2
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Download the artifacts
+        uses: actions/download-artifacts@v3
+        with:
+          name: Artifact_file
 
-#       - name: Download the artifacts
-#         run: echo Hello, world!
-
-#       - name: Execute the file
-#         run: docker run hello-world
