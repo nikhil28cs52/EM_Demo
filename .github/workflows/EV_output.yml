@@ -41,6 +41,9 @@ jobs:
         with:
           name: Artifact_file
           
+      - name: current directory
+        run: ls            
+          
       - name: Run the artifact
         run: gcc .\a.exe       
         
