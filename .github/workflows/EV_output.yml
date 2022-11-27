@@ -11,7 +11,7 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -19,17 +19,16 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: compile the file
-        run: gcc EV_program.c
+        run: gcc .\EV_program.c
 
-      # Runs docker hello-world
       - name: execute the file
-        run: ./a.out
+        run: .\a.exe
         
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: Artifact_file
-          path: a.out
+          path: a.exe
         
   release:
     runs-on: self-hosted
@@ -41,4 +40,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: Artifact_file
+          
+      - name: Run the artifact
+        run: gcc .\a.exe       
+        
+          
 
