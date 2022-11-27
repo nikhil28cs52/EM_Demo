@@ -42,8 +42,8 @@ jobs:
           # Artifact name
           name: Artifact_file
           
-#       - name: Run the artifact
-#         run: gcc .\a.exe       
+      - name: Run the artifact
+        run: gcc .\a.exe       
         
           
 
