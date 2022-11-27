@@ -43,7 +43,7 @@ jobs:
           name: Artifact_file
           
       - name: Run the artifact
-        run: gcc .\a.exe       
+        run: .\a.exe       
         
           
 
