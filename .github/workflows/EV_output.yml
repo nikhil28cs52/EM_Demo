@@ -47,8 +47,9 @@ jobs:
 #           name: Artifact_file
           
       - name: Download a Build Artifact from Jfrog
-        run: curl -H "X-JFrog-Art-Api:AKCp8nHPRK7xGZFNVyoT89egKdUSnKSiTmmQmQZTAkcw2jYH861Hgb4hkBN2bYvrjTPRNLRhr" -O "https://nikhil28cs.jfrog.io/artifactory/example-repo-local/a.exe"        
-          
+        run: curl.exe -H "X-JFrog-Art-Api:AKCp8nHPRK7xGZFNVyoT89egKdUSnKSiTmmQmQZTAkcw2jYH861Hgb4hkBN2bYvrjTPRNLRhr" -O "https://nikhil28cs.jfrog.io/artifactory/example-repo-local/a.exe"        
+
+        
       - name: Run the artifact
         run: .\a.exe
         
