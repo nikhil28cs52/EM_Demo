@@ -3,7 +3,8 @@ name: Hello World
 
 
 on:
-  push:
+  workflow_dispatch:
+#   push:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,6 +29,10 @@ jobs:
         with:
           name: Artifact_file
           path: a.exe
+          
+      - name: Uploading Artifacts on Jfrog
+        run: curl -H "X-JFrog-Art-Api:AKCp8nHPRK7xGZFNVyoT89egKdUSnKSiTmmQmQZTAkcw2jYH861Hgb4hkBN2bYvrjTPRNLRhr" -T a.exe "https://nikhil28cs.jfrog.io/artifactory/example-repo-local/"         
+          
         
   release:
     runs-on: self-hosted
